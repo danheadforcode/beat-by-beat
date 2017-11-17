@@ -3,7 +3,7 @@ html
         if title
             title #{ title }
         else
-            title Awesome shop powered by GraphCMS and Snipcart
+            title Beat by Beat
 
         block styles
             link(href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css', rel='stylesheet', type="text/css")
@@ -16,14 +16,18 @@ html
         
     body
         .container
-            nav.nav.has-shadow
-                .nav-left
-                    a(href='/').nav-item.is-active.is-tab Spinners
-
-                .nav-right.nav-menu
-                    a.nav-item.is-tab.snipcart-summary.snipcart-checkout
+            .nav.menu
+            
+                 .column.has-text-left.title.is-one-fifth 
+                    a(href='/') Products
+                 .column.has-text-left.title.is-one-fifth    
+                    a(href='/artists') Artists     
+                 .column.has-text-centered.has-logo.is-two-fifths 
+                 .column.has-text-right.title.is-one-fifth
+                    a.snipcart-summary.snipcart-checkout
                         i.fa.fa-shopping-cart &nbsp;
                         | View cart (
                         span.snipcart-total-items 0
                         | )
+
         block content

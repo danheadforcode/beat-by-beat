@@ -21,9 +21,9 @@ module.exports = {
                         allProducts {
                             name,
                             id,
-                            sku,
                             price,
-                            description,
+                            sku,
+                            style,
                             image {
                                 url
                             }
@@ -47,12 +47,12 @@ module.exports = {
                         Product(id: "${id}") {
                             name,
                             id,
+                            sku,
+                            style,
                             image {
                                 url
                             },
-                            description,
                             price,
-                            sku
                         }
                     }
                 `

@@ -5,7 +5,7 @@ block content
     .section
         .container
             .heading
-                h1.title Our spinners
+                h1.title Products
 
     .section
         .container
@@ -14,7 +14,7 @@ block content
                     .column.is-half
                         article.media
                             figure.media-left
-                                p.image.is-64x64
+                                p.image
                                     img(src=p.image.url)
                             .media-content
                                 .content
@@ -22,12 +22,12 @@ block content
                                         strong #{ p.name }
                                         small  #{ formatMoney(p.price) }
                                         br
-                                        | !{ p.description }
+                                        strong  #{ p.style }
                                 nav.level
                                     .level-left
                                         +snipcart_button(p).level-item(title='Add to cart')
-                                            span.icon.is-small
+                                            span.icon.is-large
                                                 i.fa.fa-cart-plus
                                         a(href=`/products/${p.id}`, title='View details').level-item
-                                            span.icon.is-small
+                                            span.icon.is-large
                                                 i.fa.fa-info

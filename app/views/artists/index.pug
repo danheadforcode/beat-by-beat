@@ -1,0 +1,22 @@
+extends ../layout.pug
+include ../_mixins/snipcart.pug
+
+block content
+    .section
+        .container
+            .heading
+                h1.title Artists
+
+    .section
+        .container
+            .columns.is-multiline
+                each p in artists
+                    .column.is-half
+                        article.media
+                            figure.media-left
+                                p.image
+                                    img(src=p.image.url)
+                            .media-content
+                                .content
+                                    p
+                                        strong #{ p.name }

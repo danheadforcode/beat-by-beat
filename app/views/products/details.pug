@@ -5,14 +5,14 @@ block content
     .section
         .container
             .columns
-                .card.column.is-half.is-offset-one-quarter
+                .card.column
                     .card-image
-                        figure.image.is-128x128
+                        figure.image.is-278x182
                             img(src=product.image.url)
                     .card-content
-                        p.title.is-4 #{ product.name }
-                            small  #{ formatMoney(product.price) }
-                        p #{ product.description }
+                        p.title #{ product.name }
+                        p.subtitle #{product.style}
+                        strong  #{ formatMoney(product.price) }
 
                     .card-content
                         +snipcart_button(product)

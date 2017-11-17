@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const products = require('./app/routers/products')
+const artists = require('./app/routers/artists')
 const path = require('path')
 const config = require('./config.json')
 const numeral = require('numeral')
@@ -10,7 +11,7 @@ app.use((req, res, next) => {
     res.locals = {
         snipcartApiKey: config.snipcartApiKey,
         formatMoney: (number) => {
-            return numeral(number).format('0.00$')
+            return numeral(number).format('£0.00')
         },
         fullUrl: (path) => {
             return url.format({
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/', products)
+app.use('/artists', artists)
 
 app.use((req, res, next) => {
     res.status(404)
