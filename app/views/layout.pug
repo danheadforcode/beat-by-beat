@@ -14,16 +14,17 @@ html
             script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js")
             script(src="https://cdn.snipcart.com/scripts/2.0/snipcart.js", id="snipcart", data-api-key=snipcartApiKey)
         
-    body
+    body 
+    br
+    .navbar
         .container
             .nav.menu
-            
-                 .column.has-text-left.title.is-one-fifth 
+                 .column.has-text-left.title.is-one-quarter  
                     a(href='/') Products
-                 .column.has-text-left.title.is-one-fifth    
-                    a(href='/artists') Artists     
-                 .column.has-text-centered.has-logo.is-two-fifths 
-                 .column.has-text-right.title.is-one-fifth
+                 .column.has-text-left.title.is-one-quarter    
+                    a(href='/artists') Artists       
+                 .column.has-text-left.is-two-quarter 
+                 .column.has-text-right.title.is-one-quarter 
                     a.snipcart-summary.snipcart-checkout
                         i.fa.fa-shopping-cart &nbsp;
                         | View cart (
