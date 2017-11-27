@@ -27,7 +27,6 @@ app.use((req, res, next) => {
 
 app.use('/', products)
 app.use('/artists', artists)
-
 app.use((req, res, next) => {
     res.status(404)
 });

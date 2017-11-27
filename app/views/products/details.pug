@@ -7,7 +7,7 @@ block content
             .columns
                 .card.column
                     .card-image
-                        figure.image.is-278x182
+                        figure.image
                             img(src=product.image.url)
                     .card-content
                         p.title #{ product.name }
@@ -18,4 +18,4 @@ block content
                         +snipcart_button(product)
                             span.icon.is-large
                                 i.fa.fa-cart-plus
-                    
+                    iframe(width='100%', height='166', scrolling='no', frameborder='no', src=product.song)                   

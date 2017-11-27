@@ -22,6 +22,7 @@ module.exports = {
                             name,
                             id,
                             price,
+                            song,
                             sku,
                             style,
                             image {
@@ -48,6 +49,7 @@ module.exports = {
                             name,
                             id,
                             sku,
+                            song,
                             style,
                             image {
                                 url
