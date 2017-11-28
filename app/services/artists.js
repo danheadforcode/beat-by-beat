@@ -22,9 +22,7 @@ module.exports = {
                             name,
                             id,
                             sku,
-                            image {
-                                url
-                            }
+                            profilePicture,
                         }
                     }
                 `
@@ -42,19 +40,17 @@ module.exports = {
             client.query({
                 query: gql`
                     query {
-                        Artists(id: "${id}") {
+                        Artist(id: "${id}") {
                             name,
                             id,
                             sku,
-                            image {
-                                url
-                            },
+                            profilePicture,
                         }
                     }
                 `
             })
             .then((response) => {
-                resolve(response.data.Artists)
+                resolve(response.data.Artist)
             })
             .catch((e) => {
                 reject(e)

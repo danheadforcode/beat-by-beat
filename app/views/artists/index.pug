@@ -15,8 +15,16 @@ block content
                         article.media
                             figure.media-left
                                 p.image
-                                    img(src=p.image.url)
+                                    img(src=p.profilePicture)
                             .media-content
                                 .content
                                     p
                                         strong #{ p.name }
+                                    .level
+                                        a(href=`/artists/${p.id}`, title='Artist info').level-item-left
+                                            span.icon.is-large
+                                                i.fa.fa-info
+                                       
+                                        
+                                       
+                                                

@@ -24,10 +24,10 @@ module.exports = {
                             price,
                             song,
                             sku,
-                            style,
+                            style, 
                             image {
                                 url
-                            }
+                            },
                         }
                     }
                 `
