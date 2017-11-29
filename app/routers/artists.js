@@ -3,9 +3,9 @@ const router = express.Router()
 const artistsService = require ('./../services/artists')
 
 router.get('/', (req, res) => {
+    console.log("DOES GET HERE")
     artistsService.getAllArtists()
         .then(function (data) {
-            console.log(data)
             res.render('artists/index', {
                 artists: data
             })
@@ -14,14 +14,15 @@ router.get('/', (req, res) => {
 
 router.get('/artists/:id/json', (req, res, next) => {
     res.setHeader('Content-Type', 'application/json')
+    console.log("debug2-getartistsbyid", req.params.id)
     artistsService.getArtistById(req.params.id)
-        .then((artists) => {
-            if (!artists) {
+        .then((artist) => {
+            if (!artist) {
                 next()
             }
             
             return res.send({
-                id: artists.sku,
+                id: artist.sku,
                
             })
         })
@@ -31,10 +32,11 @@ router.get('/artists/:id/json', (req, res, next) => {
 })
 
 router.get('/artists/:id', (req, res) => {
-    artistsService.getArtistsById(req.params.id)
-        .then((artists) => {
+    console.log("debug3-getartistsbyid", req.params.id)
+    artistsService.getArtistById(req.params.id)
+        .then((artist) => {
             return res.render('artists/details', {
-                artists: artists
+                artist: artist
             })
         })
 })
