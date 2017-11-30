@@ -23,6 +23,7 @@ module.exports = {
                             id,
                             sku,
                             profilePicture,
+                            description,
                         }
                     }
                 `
@@ -45,6 +46,7 @@ module.exports = {
                             id,
                             sku,
                             profilePicture,
+                            description,
                         }
                     }
                 `
