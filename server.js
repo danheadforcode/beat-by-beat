@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const products = require('./app/routers/products')
-const artists = require('./app/routers/artists')
+const homepage = require('./app/routers/home')
 const path = require('path')
 const config = require('./config.json')
 const numeral = require('numeral')
@@ -23,9 +23,8 @@ app.use((req, res, next) => {
     }
     next()
 })
-
-app.use('/', products)
-app.use('/artists', artists)
+app.use('/', homepage)
+app.use('/products', products)
 app.use((req, res, next) => {
     res.status(404)
 });

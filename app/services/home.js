@@ -13,46 +13,48 @@ const client = new ApolloClient({
 })
 
 module.exports = {
-    getAllArtists: () => {
+    getAllProducts: () => {
         return new Promise((resolve, reject) => {
             client.query({
                 query: gql`
                    query {
-                        allArtists {
+                        allProducts {
                             name,
                             id,
+                            price,
+                            song,
                             sku,
-                            profilePicture,
-                            description,
+                            style, 
                         }
                     }
                 `
             })
             .then((response) => {
-                resolve(response.data.allArtists)
+                resolve(response.data.allProducts)
             })
             .catch((e) => {
                 reject(e)
             })
         })
     },
-    getArtistById: (id) => {
+    getProductById: (id) => {
         return new Promise((resolve, reject) => {
             client.query({
                 query: gql`
                     query {
-                        Artist(id: "${id}") {
+                        Product(id: "${id}") {
                             name,
                             id,
                             sku,
-                            profilePicture,
-                            description,
+                            song,
+                            style,
+                            price,
                         }
                     }
                 `
             })
             .then((response) => {
-                resolve(response.data.Artist)
+                resolve(response.data.Product)
             })
             .catch((e) => {
                 reject(e)
